@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f4f2ee;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    border-bottom: solid 1px #dfdeda;
+    padding: 20px;
+}
+
+.header-logo {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.header-subtitle {
+    font-weight: 400;
+    font-size: 1.25em;
+    color: #999;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    width: 100vw;
+    height: 90vh;
+    box-sizing: border-box;
+}
+
+.item {
+    border-radius: 0.8rem;
+    background-color: #fff;
+}
+
+.media {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+    position: relative;
+}
+
+.slideshow-image {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 2s ease, transform 10s ease-in-out;
+    opacity: 0;
+}
+
+.slideshow-indicators {
+    position: absolute;
+    bottom: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.indicator {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    opacity: .5;
+    transition: opacity 2s;
+}
+
+.indicator.active {
+    opacity: 1;
+}
+
+@keyframes kenburns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+    }
+}
+
+.content {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 50px;
+    overflow: hidden;
+    border: solid 1px #dfdeda;
+}
+
+.content-date {
+    font-size: 1.25em;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.content-main {
+    font-size: 1.75em;
+    font-weight: 400;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-bottom: auto;
+    line-height: 1.2em;
+}
+
+.content-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25em;
+    color: #999;
+    width: 100%;
+}
+
+.likes, .comments {
+    font-weight: 400;
+}
+
+.reactions-icon {
+    object-fit: contain;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.qr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0068c9;
+    color: #fff;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    height: 15vh;
+    padding: 20px;
+}
+
+.qr-image {
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.qr-text {
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    margin: 0 30px;
+    font-size: clamp(.75rem, 3vw, 2.25rem);
+}
+
+.qr-code-box {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#qr-code {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+
+/* If portrait mode */
+
+@media (orientation: portrait) {
+    .header {
+        height: 7vh; /* Reduzierte Höhe für den Header im Hochformat */
+        padding: 20px;
+    }
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        height: 93vh; /* Gesamtbereich der Grid-Container */
+    }
+
+    .media {
+        height: 35vh; /* Höhe für das Media-Element im Hochformat */
+        flex-shrink: 0;
+    }
+
+    .content {
+        flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
+        margin-bottom: 10vh; /* Platz für den QR-Bereich schaffen */
+        font-size: 1.25em;
+        overflow-y: auto; /* Scrollen ermöglichen, falls der Text zu lang ist */
+    }
+
+    .qr {
+        width: 100%;
+        height: 10vh; /* Fixierte Höhe für QR-Bereich */
+        padding: 20px;
+        flex-shrink: 0;
+        position: fixed; /* Fixiert am unteren Rand */
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+    }
+}
