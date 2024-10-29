@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     slideshow1.style.opacity = 1;
     slideshow2.style.opacity = 0;
 
-    const initialScale = 1.1 + Math.random() * 0.4;
-    const initialX = (Math.random() - 0.5) * 40;
-    const initialY = (Math.random() - 0.5) * 40;
+    const initialScale = 1 + Math.random() * 0.1;
+    const initialX = (Math.random() - 0.5) * 100;
+    const initialY = (Math.random() - 0.5) * 100;
     slideshow1.style.transform = `scale(${initialScale}) translate(${initialX}px, ${initialY}px)`;
 
     // Set the first indicator as active
@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
         inactiveImage.style.opacity = 0;
 
         // New Ken Burns animation settings
-        const randomScale = 1.1 + Math.random() * 0.4;
-        const randomX = (Math.random() - 0.5) * 40;
-        const randomY = (Math.random() - 0.5) * 40;
+        const randomScale = 1.1 + Math.random() * 0.1;
+        const randomX = (Math.random() - 0.5) * 100;
+        const randomY = (Math.random() - 0.5) * 100;
         inactiveImage.style.transform = `scale(${randomScale}) translate(${randomX}px, ${randomY}px)`;
 
         setTimeout(() => {
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
         isSlideshow1Visible = !isSlideshow1Visible;
     }
 
-    // Start the slideshow with a 10-second interval
-    setInterval(updateSlideshow, 10000);
+    // Start the slideshow with a 5-second interval
+    setInterval(updateSlideshow, 5000);
 
     // Dynamic line count calculation
     const contentMain = document.querySelector('.content-main');
