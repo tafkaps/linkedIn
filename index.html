@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+      <title>LinkedIn</title>
+   </head>
+   <body>
+      <header class="header">
+         <img src="img/linkedin.png" alt="LinkedIn Logo" class="header-logo">
+         <div class="header-text">
+            <span class="header-title">dm-drogerie markt Deutschland</span>
+            <span class="header-subtitle">59.397 Follower:innen</span>
+         </div>
+      </header>
+      <div class="grid-container">
+         <div class="item media">
+            <img id="slideshow1" class="slideshow-image" src="img/1.png" alt="Slideshow Image 1">
+            <img id="slideshow2" class="slideshow-image" src="img/2.png" alt="Slideshow Image 2" style="opacity: 0;">
+            <div class="slideshow-indicators">
+               <span class="indicator" data-index="0"></span>
+               <span class="indicator" data-index="1"></span>
+               <span class="indicator" data-index="2"></span>
+               <span class="indicator" data-index="3"></span>
+               <span class="indicator" data-index="4"></span>
+            </div>
+         </div>
+         <div class="item content">
+            <div class="content-date">vor 1 Woche</div>
+            <div class="content-main">
+                <p>Heute möchten wir Euch einen exklusiven Einblick hinter die Kulissen eines Fotoshootings in unserem Unternehmenssitz, dem dialogicum in Karlsruhe, gewähren 📸</p>
+                <p>Bei dm sind wir stolz darauf, dass ausschließlich unsere eigenen Mitarbeitenden als Models vor der Kamera stehen 💪</p>
+                <p>Dieses Fotoshooting war nicht nur eine großartige Erfahrung, sondern auch eine Gelegenheit für unser Team, zusammenzukommen und gemeinsam viel Spaß zu haben.</p>                
+                <p>Bleibt gespannt, denn schon bald werden die beeindruckenden Ergebnisse dieses Fotoshootings auf unseren Websites zu sehen sein.</p>
+                <p>Ein herzliches Dankeschön an alle Beteiligten, die dazu beigetragen haben, dieses unvergessliche Erlebnis möglich zu machen. 🙌</p>
+                <p>Schaut gerne auf unserer Karriereseite www.dm-jobs.de vorbei, um mehr über das Arbeiten bei dm und die spannenden Möglichkeiten zu erfahren.</p>
+            </div>
+            <div class="content-stats">
+                <span class="likes">
+                    <img src="img/reactions.png" alt="Reactions Icon" class="reactions-icon"> 250
+                </span>
+                <span class="comments">5 Kommentare · 2 geteilte Beiträge</span>
+            </div>
+         </div>
+         <div class="item qr">
+            <img src="img/profile.jpeg" alt="Profile Image" class="qr-image profile-image">
+            <span class="qr-text">Beitrag auf LinkedIn ansehen</span>
+            <div class="qr-code-box">
+               <canvas id="qr-code"></canvas>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>
